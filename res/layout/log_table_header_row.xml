@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/table_heading_bkg" >
+
+    <view
+        android:id="@+id/date_header_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        class="com.darshak.view.VerticalTextView"
+        android:background="@drawable/cell_shape"
+        android:padding="@dimen/grid_margin"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:text="@string/col_date"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <view
+        android:id="@+id/type_header_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        class="com.darshak.view.VerticalTextView"
+        android:background="@drawable/cell_shape"
+        android:padding="@dimen/grid_margin"
+        android:singleLine="true"
+        android:text="@string/col_network_type"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="12sp" />
+
+    <view
+        android:id="@+id/event_header_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        class="com.darshak.view.VerticalTextView"
+        android:background="@drawable/cell_shape"
+        android:padding="@dimen/grid_margin"
+        android:singleLine="true"
+        android:text="@string/col_event"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="12sp" />
+
+    <view
+        android:id="@+id/auth_header_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        class="com.darshak.view.VerticalTextView"
+        android:background="@drawable/cell_shape"
+        android:padding="@dimen/grid_margin"
+        android:singleLine="true"
+        android:text="@string/col_auth"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="12sp" />
+
+    <view
+        android:id="@+id/encry_header_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        class="com.darshak.view.VerticalTextView"
+        android:background="@drawable/cell_shape"
+        android:padding="@dimen/grid_margin"
+        android:singleLine="true"
+        android:text="@string/col_encry"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="12sp" />
+
+    <view
+        android:id="@+id/remove_header_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        class="com.darshak.view.VerticalTextView"
+        android:background="@drawable/cell_shape"
+        android:padding="@dimen/grid_margin"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:text="@string/col_remove_entry"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="12sp" />
+
+</TableRow>

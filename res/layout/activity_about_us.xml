@@ -1,0 +1,314 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/aboutUsScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AboutUsActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/aboutUsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|fill_horizontal"
+            android:padding="5dp"
+            android:text="@string/about_us"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize" />
+
+        <TextView
+            android:id="@+id/gitHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/aboutUsTextView"
+            android:gravity="center_vertical|fill_horizontal"
+            android:padding="5dp"
+            android:text="@string/git_head"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/gitLinkTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gitHeadingTextView"
+            android:gravity="center_vertical|fill_horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:text="@string/git_link"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/legendsHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gitLinkTextView"
+            android:gravity="center_vertical|fill_horizontal"
+            android:padding="5dp"
+            android:text="@string/legends_head"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:id="@+id/legendsTable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/legendsHeadingTextView" >
+
+            <TableRow
+                android:id="@+id/legendsRowZero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/legendSilentSMSImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/legends_silent_sms"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/small_silent_sms" />
+
+                <TextView
+                    android:id="@+id/legendSilentSMSTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/legends_silent_sms"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/introTextSize" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/legendsRowOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/legendCorrectImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/legends_correct"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:scaleType="center"
+                    android:src="@drawable/correct" />
+
+                <TextView
+                    android:id="@+id/legendCorrectTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/legends_correct"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/introTextSize" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/legendsRowTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/legendWrongImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/legends_wrong"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:scaleType="center"
+                    android:src="@drawable/wrong" />
+
+                <TextView
+                    android:id="@+id/legendWrongTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/legends_wrong"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/introTextSize" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/legendsRowThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/legendYellowImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/legends_yellow"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:scaleType="center"
+                    android:src="@drawable/yellow" />
+
+                <TextView
+                    android:id="@+id/legendYellowTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/legends_yellow"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/introTextSize" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/legendsRowFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/legendNAImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/legends_na"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:scaleType="center"
+                    android:src="@drawable/nothing" />
+
+                <TextView
+                    android:id="@+id/legendNATextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/legends_na"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/introTextSize" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/contactHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/legendsTable"
+            android:gravity="center_vertical|fill_horizontal"
+            android:padding="5dp"
+            android:text="@string/contact_us_head"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:id="@+id/contactTable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactHeadingTextView" >
+
+            <TableRow
+                android:id="@+id/contactRowOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/tuLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/tu_berlin_logo_text"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tu_logo" />
+
+                <TextView
+                    android:id="@+id/contactTextView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/contact1"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/introTextSize" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/contactRowTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/aaltoLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/aalto_logo_text"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/aalto_logo" />
+
+                <TextView
+                    android:id="@+id/contactTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/contact2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/introTextSize" />
+            </TableRow>
+        </TableLayout>
+        
+       <TextView
+            android:id="@+id/limitationHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactTable"
+            android:gravity="center_vertical|fill_horizontal"
+            android:padding="5dp"
+            android:text="@string/limitation_head"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/limitationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/limitationHeadingTextView"
+            android:gravity="center_vertical|fill_horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:text="@string/limitations"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize"
+            />
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_color">#33b5e5</color>
+    <color name="white">#ffffff</color>
+    <color name="table_heading_bkg">#A3D7F7</color>
+    <color name="black">#000000</color>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="Buttondefault" parent="android:Widget.Holo.Light.Button">
+	  <item name="android:background">@drawable/btn_default_holo_light</item>
+  </style>
+
+  <style name="ImageButtondefault" parent="android:Widget.Holo.Light.ImageButton">
+	  <item name="android:background">@drawable/btn_default_holo_light</item>
+  </style>
+
+</resources>

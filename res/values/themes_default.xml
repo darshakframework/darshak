@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="darshak_default" parent="_default"/>
+
+  <style name="_default" parent="android:Theme.Holo.Light">
+
+    <item name="android:buttonStyle">@style/Buttondefault</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtondefault</item>
+
+    <item name="android:listChoiceBackgroundIndicator">@drawable/default_list_selector_holo_light</item>
+
+    <item name="android:activatedBackgroundIndicator">@drawable/default_activated_background_holo_light</item>
+
+    <item name="android:fastScrollThumbDrawable">@drawable/default_fastscroll_thumb_holo</item>
+
+  </style>
+
+</resources>

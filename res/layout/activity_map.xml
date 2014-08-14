@@ -1,0 +1,99 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollTableView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/introText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|fill_horizontal"
+            android:padding="5dp"
+            android:text="@string/intro"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize" />
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/introText"
+            android:gravity="center_vertical|right"
+            android:padding="5dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/introTextSize" />
+
+        <Button
+            android:id="@+id/clear_log"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:layout_below="@id/errorText"
+            android:layout_gravity="bottom"
+            android:onClick="clearLogs"
+            android:singleLine="true"
+            android:text="@string/clear_log"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/refresh_log"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:layout_below="@id/errorText"
+            android:layout_gravity="bottom"
+            android:layout_toRightOf="@id/clear_log"
+            android:onClick="refreshLogFiles"
+            android:singleLine="true"
+            android:text="@string/refresh_log"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clear_log"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:scrollbars="vertical"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:layout_below="@id/tableLayout"
+            android:layout_gravity="bottom"
+            android:onClick="prev"
+            android:singleLine="true"
+            android:text="@string/prev"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:layout_below="@id/tableLayout"
+            android:layout_gravity="bottom"
+            android:layout_toRightOf="@id/prev"
+            android:onClick="next"
+            android:singleLine="true"
+            android:text="@string/next"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+</ScrollView>

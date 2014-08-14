@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/gotoHome"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:onClick="gotoHome"
+        android:title=""
+        android:icon="@drawable/home"/>
+</menu>
+

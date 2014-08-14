@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Darshak</string>
+    <string name="intro">Darshak displays security capabilitites of your mobile network operator, alerts when silent SMS is received and builds a profile to assist in detecting IMSI catcher.</string>
+   
+    <string name="wrong_version">Darshak is compatible with Android v4.1.2.</string>
+    <string name="wrong_model">Darshak supports security assessments only on rooted Samsung Galaxy S2 and S3 phones.</string>
+    <string name="no_root">Darshak requires root privileges to conduct security assessments.</string>
+    <string name="wrong_model_and_version">Darshak is compatible with Android v4.1.2, on rooted Samsung Galaxy S2 and S3 phones.</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_history_log">Detail log</string>
+    <string name="clear_log">Clear logs</string>
+    <string name="refresh_log">Refresh logs</string>
+    <string name="auth_image_event_silent_sms">Received Silent SMS</string>
+    <string name="auth_image_text_correct">Does authenctication</string>
+    <string name="auth_image_text_wrong">Does no authenctication</string>
+    <string name="encry_image_text_correct">Does encryption</string>
+    <string name="encry_image_text_wrong">Does no encryption</string>
+    <string name="col_date">Date</string>
+    <string name="col_event">Event</string>
+    <string name="col_network_type">Network type</string>
+    <string name="col_encry">Encryption</string>
+    <string name="col_auth">Authentication</string>
+    <string name="col_remove_entry">Remove</string>
+    <string name="title_activity_airplane_mode_configure">Configure Airplane Mode</string>
+    <string name="airplane_mode_config_text">Suspicious cellular activity has been detected on the phone. You can deactivate the cellular activaties by configuring phone into Airplane mode.</string>
+    <string name="activate_airplane_mode">Activate Airplane mode.</string>
+    <string name="de_activate_airplane_mode">Deactivate Airplane mode.</string>
+    <string name="title_activity_about_us">About Us</string>
+    <string name="about_us">About us!</string>
+    <string name="git_head">git page</string>
+    <string name="git_link">Coming soon</string>
+    <string name="contact_us_head">Contact us</string>
+    <string name="contact1">Ravishankar Borgaonkar\nPost-doctoral researcher\nTU Berlin, Germany</string>
+    <string name="contact2">Swapnil Udar\nMasters Student\nAalto University, Finland</string>
+    <string name="tu_berlin_logo_text">TU Berlin, Germany</string>
+    <string name="aalto_logo_text">Aalto University, Finland</string>
+    <string name="legends_head">Legends</string>
+    <string name="legends_silent_sms">Silene SMS</string>
+    <string name="legends_correct">Everything is OK</string>
+    <string name="legends_wrong">Something is wrong</string>
+    <string name="legends_yellow">50/50</string>
+    <string name="legends_tower">Control messages exchanged between Network operator and mobile device</string>
+    <string name="legends_na">Not applicable</string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
+    <string name="limitation_head">Limitations</string>
+    <string name="limitations">Darshak is compatible with Android v4.1.2, on rooted Samsung Galaxy S2 and S3 phones.</string>
+</resources>
