@@ -7,5 +7,6 @@
     <dimen name="resultTextSize">14dp</dimen>
     <dimen name="grid_margin">3dp</dimen>
     <dimen name="grid_margin_vert">10dp</dimen>
+    <dimen name="about_us_bullets">12dp</dimen>
 
 </resources>

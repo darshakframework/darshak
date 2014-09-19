@@ -7,9 +7,6 @@ import java.io.RandomAccessFile;
 
 import android.util.Log;
 
-import com.darshak.constants.Event;
-import com.darshak.constants.NetworkType;
-
 /**
  * 
  * @author Swapnil Udar & Ravishankar Borgaonkar
@@ -19,7 +16,7 @@ public class LogFileReader {
 	
 	private static final String LOG_TAG = LogFileReader.class.getSimpleName();
 	
-	public byte[] readFile(File logFile, Event event, NetworkType nwType) {
+	public byte[] readFile(File logFile) {
 		Log.d(LOG_TAG,
 				"Log file to read for identifying security parameters : "
 						+ logFile.getAbsolutePath());

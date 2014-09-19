@@ -9,7 +9,7 @@ public final class DatabaseSchema {
 	public static final String DB_NAME = "DarshakDB";
 	public static final int DB_VERSION = 1;
 
-	public static class LogEntrySchema {
+	public static final class LogEntrySchema {
 		public static final String TABLE_NAME = "LOG";
 		public static final String UID = "UID";
 		public static final String TIME = "TIME";
@@ -33,7 +33,7 @@ public final class DatabaseSchema {
 				+ " ) ";
 	}
 
-	public static class PacketSchema {
+	public static final class PacketSchema {
 		public static final String TABLE_NAME = "PACKET";
 		public static final String UID = "UID";
 		public static final String LOG_UID = "LOG_UID";
@@ -57,7 +57,7 @@ public final class DatabaseSchema {
 				+ ")";
 	}
 
-	public static class PacketAttributeSchema {
+	public static final class PacketAttributeSchema {
 		public static final String TABLE_NAME = "PACKET_ATTR";
 		public static final String UID = "UID";
 		public static final String PACKET_UID = "PACKET_UID";
@@ -82,7 +82,7 @@ public final class DatabaseSchema {
 				+ " ) ";
 	}
 	
-	public static class CellularEvent {
+	public static final class CellularEvent {
 		public static final String TABLE_NAME = "CELLULAR_EVENT";
 		public static final String EVENT_UID = "UID";
 		public static final String EVENT_CODE = "EVENT_CODE";
@@ -102,6 +102,39 @@ public final class DatabaseSchema {
 				+ EVENT_NW_TYPE + " INTEGER, "
 				+ EVENT_NW_OP + " TEXT, "
 				+ EVENT_CONSUMED + " INTEGER "
+				+ " ) ";
+	}
+	
+	public static final class ProfileParams {
+		public static final String TABLE_NAME = "PROFILE_PARAMS";
+		public static final String TYPE = "TYPE";
+		public static final String HEX_CODE = "HEX_CODE";
+		public static final String DISPLAY_TXT = "DISPLAY_TXT";
+
+		public static final String[] COLUMNS = { TYPE, HEX_CODE, DISPLAY_TXT };
+
+		public static final String CREATE_TABLE_PROFILE_PARAMS = "CREATE TABLE IF NOT EXISTS "
+				+ TABLE_NAME
+				+ " ( "
+				+ TYPE + " INTEGER, "
+				+ HEX_CODE + " TEXT, " 
+				+ DISPLAY_TXT + " TEXT, " 
+				+ "PRIMARY KEY (" + TYPE + ", " + HEX_CODE + ")"
+				+ " ) ";
+	}
+	
+	public static final class SentinelPacketScehama {
+		public static final String TABLE_NAME = "SENTINEL_PACKET";
+		public static final String SCAN_TYPE = "SCAN_TYPE";
+		public static final String BYTE_SEQ = "BYTE_SEQ";
+
+		public static final String[] COLUMNS = { SCAN_TYPE, BYTE_SEQ };
+
+		public static final String CREATE_TABLE_SENTINEL_PACKET = "CREATE TABLE IF NOT EXISTS "
+				+ TABLE_NAME
+				+ " ( "
+				+ SCAN_TYPE + " INTEGER PRIMARY KEY UNIQUE, "
+				+ BYTE_SEQ + " BLOB " 
 				+ " ) ";
 	}
 }

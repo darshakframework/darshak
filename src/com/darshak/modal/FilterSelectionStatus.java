@@ -18,18 +18,22 @@ public class FilterSelectionStatus {
 
 	private static final PacketType[] TRACK_SILENT_SMS_AND_CELLULAR_EVENTS = new PacketType[] {
 			PacketType.GSM_INIT_SERV_REQ, PacketType.GSM_INIT_CIPHER_MODE,
-			PacketType.GSM_INIT_AUTH_REQ, PacketType._3G_INIT_SERV_REQ,
-			PacketType._3G_INIT_CIPHER_MODE, PacketType._3G_INIT_AUTH_REQ,
-			PacketType.SILENT_SMS };
+			PacketType.GSM_INIT_AUTH_REQ, PacketType._3G_SEC_MODE_CMD,
+			PacketType._3G_INIT_AUTH_REQ,
+			PacketType.SILENT_SMS };	
 
 	private boolean sSilentSMSCellularEvents;
+	// Remove it
+	private boolean sProfileParams = true;
 
+	private static final PacketType[] PROFILE_PARAM_PACKETS = new PacketType[] { PacketType.SYS_INFO_3, };
+ 
 	public FilterSelectionStatus(boolean silentSMSCellularEvents) {
 		super();
 		this.sSilentSMSCellularEvents = silentSMSCellularEvents;
 	}
 
-	private String createQueryForCodeEnums(PacketType[] packetTypes) {
+	private String createQueryForPacketTypes(PacketType[] packetTypes) {
 		StringBuilder strBuilder = new StringBuilder();
 
 		for (PacketType packetType : packetTypes) {
@@ -46,7 +50,13 @@ public class FilterSelectionStatus {
 		StringBuilder strBuilder = new StringBuilder();
 		if (sSilentSMSCellularEvents) {
 			strBuilder
-					.append(createQueryForCodeEnums(TRACK_SILENT_SMS_AND_CELLULAR_EVENTS));
+					.append(createQueryForPacketTypes(TRACK_SILENT_SMS_AND_CELLULAR_EVENTS));
+		}
+		if (sProfileParams) {
+			if (strBuilder.length() > 0)
+				strBuilder.append(" OR ");
+			strBuilder
+					.append(createQueryForPacketTypes(PROFILE_PARAM_PACKETS));
 		}
 
 		// Dummy condition to match no condition.

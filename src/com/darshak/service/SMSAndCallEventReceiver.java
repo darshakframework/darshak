@@ -48,8 +48,13 @@ public class SMSAndCallEventReceiver extends BroadcastReceiver {
 		}
 		if ("android.provider.Telephony.SMS_RECEIVED"
 				.equals(intent.getAction())) {
-			Log.e(LOG_TAG, intent.getAction());
-			setCallOrSMSStatus(application, Event.INCOMING_SMS, nwType, nwOperator);
+			Log.e(LOG_TAG, "SMS received " + intent.getAction());
+			setCallOrSMSStatus(application, Event.INCOMING_SMS, nwType, nwOperator);			
+			/*application.setSMSReceivedReceiverInvoked(true);*/
+		}
+		if ("android.provider.Telephony.SMS_DELIVER".equals(intent.getAction())) {
+			Log.e(LOG_TAG, "SMS delivered " + intent.getAction());
+			setCallOrSMSStatus(application, Event.OUTGOING_SMS, nwType, nwOperator);
 		}
 	}
 

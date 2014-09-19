@@ -7,13 +7,13 @@ import android.view.Menu;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.darshak.R;
 import com.darshak.constants.Constants;
 import com.darshak.constants.Event;
 import com.darshak.db.DarshakDBHelper;
+import com.darshak.modal.LogEntry;
 import com.darshak.modal.Packet;
 import com.darshak.modal.PacketAttribute;
-import com.darshak.modal.LogEntry;
+import com.darshak.util.Utils;
 
 /**
  * 
@@ -46,12 +46,10 @@ public class HistoryLogActivity extends Activity {
 				filterSelectionQuery);
 
 		TextView logDateValueTextView = (TextView) findViewById(R.id.logDateValue);
-		logDateValueTextView.setText(((Application) getApplication())
-				.formatDate(logEntry));
+		logDateValueTextView.setText(Utils.formatDate(logEntry));
 
 		TextView nwTypeValueTextView = (TextView) findViewById(R.id.nwTypeValue);
-		nwTypeValueTextView.setText(((Application) getApplication())
-				.getNetworkType(logEntry));
+		nwTypeValueTextView.setText(Utils.getNetworkType(logEntry));
 
 		TextView nwOperatorValueTextView = (TextView) findViewById(R.id.nwOperatorValue);
 		nwOperatorValueTextView.setText(logEntry.getNwOperator());
@@ -67,6 +65,13 @@ public class HistoryLogActivity extends Activity {
 			textView.setTextColor(getResources()
 					.getColor(R.color.default_color));
 			packetAttributesView.addView(textView);
+			
+			TextView codesTextView = new TextView(this);
+			codesTextView.setText(packet.getHexCode());
+			codesTextView.setTextColor(getResources().getColor(
+					R.color.default_color));
+			packetAttributesView.addView(codesTextView);
+			
 			for (PacketAttribute packetAttribute : packet.getPacketAttributes()) {
 				TextView indTextView = new TextView(this);
 				indTextView.setText(packetAttribute.getDisplayText());

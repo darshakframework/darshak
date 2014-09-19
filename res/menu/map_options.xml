@@ -5,6 +5,6 @@
         android:id="@+id/aboutUsMenu"
         android:onClick="openAboutUsPage"
         android:showAsAction="never"
-        android:title="@string/about_us"/>
+        android:title="@string/title_activity_about_us"/>
 
 </menu>

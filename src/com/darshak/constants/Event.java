@@ -12,7 +12,8 @@ public enum Event {
 	OUTGOING_SMS(2,	"Outgoing SMS", R.drawable.out_sms), 
 	INCOMING_CALL(3, "Incoming Call", R.drawable.in_call), 
 	OUTGOING_CALL(4, "Outgoing Call", R.drawable.out_call), 
-	INCOMING_SILENT_SMS(5,	"Incoming Silent SMS", R.drawable.silent_sms),	
+	INCOMING_SILENT_SMS(5,	"Incoming Silent SMS", R.drawable.silent_sms),
+	PROFILE_PARAMS(6,	"Profile parameters", R.drawable.nothing),	
 	NONE(-1, "Null event", R.drawable.wrong);
 
 	private int sEventCode;

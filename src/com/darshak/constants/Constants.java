@@ -2,12 +2,6 @@ package com.darshak.constants;
 
 import java.io.File;
 
-import com.darshak.formatter.PacketFormatter;
-import com.darshak.formatter.HexFormatter;
-import com.darshak.formatter.NumberFormatter;
-import com.darshak.formatter.PhoneNumberFormatter;
-import com.darshak.formatter.TimestampFormatter;
-
 /**
  * @author Andreas Schildbach
  * @author Swapnil Udar & Ravishankar Borgaonkar
@@ -29,6 +23,7 @@ public interface Constants {
 	int GSM = 1;
 	int _3G = 2;
 	int SMS = 3;
+	int PROFILE_PARAMS = 4;
 
 	String RAW_FILE_PREFIX = "darshak_raw";
 
@@ -38,17 +33,9 @@ public interface Constants {
 	
 	String FILTER_SELECTION_QUERY = "filterSelectionQuery";
 
-	int DARSHAK_SERV_EXE_INTERVAL_SEC = 30;
-
-	PacketFormatter NULL_FORMATTER = new PacketFormatter();
-
-	PacketFormatter PHONE_NUM_FORMATTER = new PhoneNumberFormatter();
-
-	PacketFormatter TIMESTAMP_FORMATTER = new TimestampFormatter();
-
-	PacketFormatter NUMBER_FORMATTER = new NumberFormatter();
-
-	PacketFormatter HEX_FORMATTER = new HexFormatter();
+	int DARSHAK_SERV_EXE_INTERVAL_SEC = 15;
 
 	long UNKNOWN_UID = -1;
+	
+	int NUM_OF_TERMINATING_BYTES = 200;
 }

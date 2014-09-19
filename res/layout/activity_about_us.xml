@@ -21,17 +21,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|fill_horizontal"
-            android:padding="5dp"
-            android:text="@string/about_us"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/about_us_text"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/default_color"
             android:textSize="@dimen/introTextSize" />
 
         <TextView
-            android:id="@+id/gitHeadingTextView"
+            android:id="@+id/aboutUsBulletsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/aboutUsTextView"
+            android:gravity="center_vertical|fill_horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/about_us_bullets"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/about_us_bullets" />
+
+        <TextView
+            android:id="@+id/gitHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/aboutUsBulletsTextView"
             android:gravity="center_vertical|fill_horizontal"
             android:padding="5dp"
             android:text="@string/git_head"
@@ -282,12 +298,24 @@
                     android:textSize="@dimen/introTextSize" />
             </TableRow>
         </TableLayout>
-        
-       <TextView
-            android:id="@+id/limitationHeadingTextView"
+
+        <TextView
+            android:id="@+id/contactEmailTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/contactTable"
+            android:gravity="center_vertical|fill_horizontal"
+            android:padding="5dp"
+            android:text="@string/darshak_email"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/default_color"
+            android:textSize="@dimen/introTextSize" />
+
+        <TextView
+            android:id="@+id/limitationHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactEmailTextView"
             android:gravity="center_vertical|fill_horizontal"
             android:padding="5dp"
             android:text="@string/limitation_head"
@@ -307,8 +335,7 @@
             android:text="@string/limitations"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/default_color"
-            android:textSize="@dimen/introTextSize"
-            />
+            android:textSize="@dimen/introTextSize" />
     </RelativeLayout>
 
 </ScrollView>

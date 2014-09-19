@@ -1,11 +1,20 @@
 package com.darshak;
 
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,9 +35,11 @@ import com.darshak.constants.Event;
 import com.darshak.constants.PacketAttributeType;
 import com.darshak.db.DarshakDBHelper;
 import com.darshak.modal.FilterSelectionStatus;
-import com.darshak.modal.PacketAttribute;
 import com.darshak.modal.LogEntry;
+import com.darshak.modal.PacketAttribute;
 import com.darshak.modal.PaginationDetails;
+import com.darshak.service.AlarmEventReceiver;
+import com.darshak.service.OutgoingSMSContentObserver;
 import com.darshak.util.Utils;
 
 /**
@@ -47,6 +58,22 @@ public class MainActivity extends Activity {
 	private PaginationDetails sPaginationDetails = null;
 	
 	private TableRow sTableHeaderRow = null;
+	
+	private static final String PREF_NAME = "PREF_SENT_SMS_ID";
+
+	private static final String HIGHEST_SMS_ID_KEY = "HIGHEST_SMS_ID";
+	
+	private static final String SMS_CONTENT_OBSERVER_INITIALIZED_KEY = "SMS_CONTENT_OBSERVER_INITIALIZED";
+
+	// Create Sent box URI
+	private static final Uri SENT_URI = Uri.parse("content://sms/sent");
+
+	// List required columns
+	private static final String[] REQ_COLS = new String[] { "_id", "date" };
+	
+	private static final String SMS_SORT_ORDER = " date DESC ";
+
+	private SharedPreferences sSharedpreferences;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -61,7 +88,7 @@ public class MainActivity extends Activity {
 			errorText.setText(R.string.wrong_model);
 		} else if (!Utils.isSupportedVersion()) {
 			errorText.setText(R.string.wrong_version);
-		}		
+		}
 		
 		sDBHelper = ((Application) getApplication()).getDBHelper();
 		
@@ -73,9 +100,63 @@ public class MainActivity extends Activity {
 
 		sFilterSelectionStatus = new FilterSelectionStatus(true);
 
+		// initialize shared preference
+		sSharedpreferences = getSharedPreferences(PREF_NAME,
+				Context.MODE_PRIVATE);
+
+		// Initialize SMS sent count in preference
+		if (getHighestSMSIdInPref() == -1) {
+			setHighestSMSIdInPref(getHighestSMSId());
+		}
+
 		initializeNextPrevButtonsState();
 
-		loadLogEntries();
+		loadLogEntries();		
+		
+		initializeAlarmManager();		
+		initializeSMSContentObserver();
+	}
+	
+	private void initializeAlarmManager() {
+		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+		Intent broadcast_intent = new Intent(getApplicationContext(),
+				AlarmEventReceiver.class);
+
+		// Check alarm is already initialized
+		boolean alarmNotRegistered = PendingIntent.getBroadcast(
+				getApplicationContext(), 0, broadcast_intent,
+				PendingIntent.FLAG_NO_CREATE) == null;
+
+		if (alarmNotRegistered) {
+			Log.d(LOG_TAG, "Intializing Alarm");
+
+			PendingIntent pendingIntent = PendingIntent.getBroadcast(
+					getApplicationContext(), 0, broadcast_intent,
+					PendingIntent.FLAG_UPDATE_CURRENT);
+			Calendar now = Calendar.getInstance();
+			// Start in 1 seconds
+			long triggerAtTime = now.getTimeInMillis();
+			// Repeat after 30 seconds : worked fall back to it
+			long repeatAlarmEvery = (Constants.DARSHAK_SERV_EXE_INTERVAL_SEC * 1000);
+			// TODO: which type is most suitable.
+			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+						triggerAtTime, repeatAlarmEvery, pendingIntent);
+			
+			Log.d(LOG_TAG, "Intializing Alarm completed");
+		} else {
+			Log.d(LOG_TAG, "Alarm already registered.");
+		}
+	}
+	
+	private void initializeSMSContentObserver() {
+		if (!isSMSContentObserverInitialized()) {
+			// Register observer for SMS sent
+			ContentResolver contentResolver = getApplicationContext()
+					.getContentResolver();
+			contentResolver.registerContentObserver(Uri.parse("content://sms"),
+					true, new OutgoingSMSContentObserver(this));
+			smsContentObserverInitialized();
+		}
 	}
 
 	@Override
@@ -195,15 +276,13 @@ public class MainActivity extends Activity {
 
 			TextView dateTextView = (TextView) tableRow
 					.findViewById(R.id.date_textView);
-			dateTextView.setText(((Application) getApplication())
-					.formatDate(logEntry));
+			dateTextView.setText(Utils.formatDate(logEntry));
 			dateTextView.setOnClickListener(onClickListener);
 			dateTextView.setOnTouchListener(onTouchListner);
 
 			TextView typeTextView = (TextView) tableRow
 					.findViewById(R.id.type_textView);
-			typeTextView.setText(((Application) getApplication())
-					.getNetworkType(logEntry));
+			typeTextView.setText(Utils.getNetworkType(logEntry));
 			typeTextView.setOnClickListener(onClickListener);
 			typeTextView.setOnTouchListener(onTouchListner);
 
@@ -422,5 +501,46 @@ public class MainActivity extends Activity {
 			}
 			return listOfLogEntry;
 		}		
+	}
+	
+	public int getHighestSMSId() {
+		// Get Content Resolver object, which will deal with Content Provider
+		ContentResolver contentResolver = getContentResolver();
+
+		// Fetch Sent SMS Message from Built-in Content Provider
+		Cursor cursor = contentResolver.query(SENT_URI, REQ_COLS, null, null,
+				SMS_SORT_ORDER);
+
+		// SMS are sorted as per date in descending order, first id is the latest ID		
+		if (cursor!= null && cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			int highestSMSID = cursor.getInt(0);
+			Log.e(LOG_TAG, "HIGHEST SMS ID " + highestSMSID);
+			return highestSMSID;
+		}
+		return -1;
+	}
+
+	public void setHighestSMSIdInPref(int highestSMSID) {
+		Editor editor = sSharedpreferences.edit();
+		editor.putInt(HIGHEST_SMS_ID_KEY, highestSMSID);
+		editor.commit();
+		editor.apply();
+	}
+
+	public int getHighestSMSIdInPref() {
+		return sSharedpreferences.getInt(HIGHEST_SMS_ID_KEY, -1);
+	}
+	
+	public void smsContentObserverInitialized() {
+		Editor editor = sSharedpreferences.edit();
+		editor.putBoolean(SMS_CONTENT_OBSERVER_INITIALIZED_KEY, true);
+		editor.commit();
+		editor.apply();
+	}
+	
+	public boolean isSMSContentObserverInitialized() {
+		return sSharedpreferences.getBoolean(
+				SMS_CONTENT_OBSERVER_INITIALIZED_KEY, false);
 	}
 }
