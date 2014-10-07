@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Darshak</string>
     <string name="intro">Darshak displays security capabilitites of your mobile network operator, alerts when silent SMS is received and builds a profile to assist in detecting IMSI catcher.</string>
-   
     <string name="wrong_version">Darshak is compatible with Android v4.1.2.</string>
     <string name="wrong_model">Darshak supports security assessments only on rooted Samsung Galaxy S2 and S3 phones.</string>
     <string name="no_root">Darshak requires root privileges to conduct security assessments.</string>
@@ -48,4 +48,17 @@
     <string name="darshak_email">darshak@sec.t-labs.tu-berlin.de</string>
     <string name="limitation_head">Limitations</string>
     <string name="limitations">Darshak is compatible with Android v4.1.2, on rooted Samsung Galaxy S3 (GT-I9300) phones (non LTE).</string>
+    <string name="title_activity_test">Test</string>
+    <string name="testPageIntroText">This utility helps to test Darshak application by making multiple calls to phone number of your choice. Enter the phone number then either enter number of times the call should be made or enter the time gap (in minutes) between calls and provide the test interval in hours, and then click on Make call. Once calls are made observe Darshak applications main page.</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="make_call">Make Call</string>
+    <string name="clear">Clear</string>
+    <string name="phone_num_lable">Phone number</string>
+    <string name="count_lable">Number of Calls</string>
+    <string name="wait">Wait till operation is in progress</string>
+	<string name="orText">---------------------- OR ----------------------</string>
+	<string name="Repeat_call_after">Repeat call after</string>
+	<string name="minutes">minutes</string>
+	<string name="time_interval">Test time interval</string>
+	<string name="stop_test">Stop test</string>
 </resources>

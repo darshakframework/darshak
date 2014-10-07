@@ -394,7 +394,12 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(getApplicationContext(), AboutUsActivity.class);
 		startActivity(intent);
 	}
-	
+
+	public void openTestPage(MenuItem menu) {
+		Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+		startActivity(intent);
+	}
+
 	private void loadLogEntries() {		
 		disableNextPrevButtonsState();
 		new RenderLogEntryTable().execute((String) null);

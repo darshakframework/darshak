@@ -97,34 +97,34 @@ public class PacketConfigurator {
 		return packetIdentificationDetails;
 	}
 
-	// TODO
-	/*
-	 * private static PacketIdentificationDetails securityModeCommand() { byte
-	 * initSecurityModeBytes[] = { (byte) 0x00, (byte) 0x0c, (byte) 0x00, (byte)
-	 * 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
-	 * (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte)
-	 * 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00 };
-	 * 
-	 * List<Integer> anythingAllowedBytes = Arrays.asList(0, 2, 3, 4, 5, 7, 8,
-	 * 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
-	 * 
-	 * PacketIdentificationDetails packetIdentificationDetails = new
-	 * PacketIdentificationDetails( _3G_SEC_MODE_CMD, initSecurityModeBytes,
-	 * anythingAllowedBytes, -1, -1);
-	 * 
-	 * PacketIdentificationDetails.WildByteInfo wildByteInfo =
-	 * packetIdentificationDetails.new WildByteInfo( 1, (byte) 0x0c, (byte)
-	 * 0x0d, (byte) 0x20);
-	 * 
-	 * PacketIdentificationDetails.WildByteInfo wildByteInfo2 =
-	 * packetIdentificationDetails.new WildByteInfo( 6, (byte) 0x4a, (byte)
-	 * 0x28);
-	 * 
-	 * PacketIdentificationDetails.WildByteInfo[] wildBytes = { wildByteInfo,
-	 * wildByteInfo2 }; packetIdentificationDetails.addWildBytes(wildBytes);
-	 * 
-	 * return packetIdentificationDetails; }
-	 */
+	// TODO	
+/*	private static PacketIdentificationDetails securityModeCommand() {
+		byte initSecurityModeBytes[] = { (byte) 0x00, (byte) 0x0c, (byte) 0x00,
+				(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
+				(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
+				(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
+				(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00 };
+
+		List<Integer> anythingAllowedBytes = Arrays.asList(0, 2, 3, 4, 5, 7, 8,
+				9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
+
+		PacketIdentificationDetails packetIdentificationDetails = new PacketIdentificationDetails(
+				_3G_SEC_MODE_CMD, initSecurityModeBytes, anythingAllowedBytes,
+				-1, -1);
+
+		PacketIdentificationDetails.WildByteInfo wildByteInfo = packetIdentificationDetails.new WildByteInfo(
+				1, (byte) 0x0c, (byte) 0x0d, (byte) 0x20);
+
+		PacketIdentificationDetails.WildByteInfo wildByteInfo2 = packetIdentificationDetails.new WildByteInfo(
+				6, (byte) 0x4a, (byte) 0x28);
+
+		PacketIdentificationDetails.WildByteInfo[] wildBytes = { wildByteInfo,
+				wildByteInfo2 };
+		packetIdentificationDetails.addWildBytes(wildBytes);
+
+		return packetIdentificationDetails;
+	}*/
+	 
 
 	private static PacketIdentificationDetails securityModeCommand1() {
 		byte initSecurityModeBytes[] = { (byte) 0x00, (byte) 0x0c, (byte) 0x00,

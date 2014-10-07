@@ -65,12 +65,14 @@ public class HistoryLogActivity extends Activity {
 			textView.setTextColor(getResources()
 					.getColor(R.color.default_color));
 			packetAttributesView.addView(textView);
-			
-			TextView codesTextView = new TextView(this);
-			codesTextView.setText(packet.getHexCode());
-			codesTextView.setTextColor(getResources().getColor(
-					R.color.default_color));
-			packetAttributesView.addView(codesTextView);
+
+			if (!Constants.prodMode) {
+				TextView codesTextView = new TextView(this);
+				codesTextView.setText(packet.getHexCode());
+				codesTextView.setTextColor(getResources().getColor(
+						R.color.default_color));
+				packetAttributesView.addView(codesTextView);
+			}
 			
 			for (PacketAttribute packetAttribute : packet.getPacketAttributes()) {
 				TextView indTextView = new TextView(this);

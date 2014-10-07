@@ -8,6 +8,11 @@ import com.darshak.constants.PacketType;
 import com.darshak.modal.Packet;
 import com.darshak.modal.PacketAttribute;
 
+/**
+ * 
+ * @author Swapnil Udar & Ravishankar Borgaonkar
+ *
+ */
 public class UMTSSecurityModeCommandFormatter extends PacketFormatter {
 
 	@Override

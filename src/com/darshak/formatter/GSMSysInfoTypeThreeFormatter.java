@@ -16,6 +16,11 @@ import com.darshak.modal.Packet;
 import com.darshak.modal.PacketAttribute;
 import com.darshak.util.Utils;
 
+/**
+ * 
+ * @author Swapnil Udar & Ravishankar Borgaonkar
+ *
+ */
 public class GSMSysInfoTypeThreeFormatter extends PacketFormatter {
 
 	@Override

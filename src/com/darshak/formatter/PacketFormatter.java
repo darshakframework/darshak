@@ -10,6 +10,11 @@ import java.util.TimeZone;
 import com.darshak.modal.Packet;
 import com.darshak.util.Utils;
 
+/**
+ * 
+ * @author Swapnil Udar & Ravishankar Borgaonkar
+ *
+ */
 public abstract class PacketFormatter {
 
 	SimpleDateFormat sInputDateFormat;

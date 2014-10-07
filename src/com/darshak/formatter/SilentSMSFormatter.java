@@ -11,6 +11,11 @@ import java.util.List;
 import com.darshak.modal.Packet;
 import com.darshak.modal.PacketAttribute;
 
+/**
+ * 
+ * @author Swapnil Udar & Ravishankar Borgaonkar
+ *
+ */
 public class SilentSMSFormatter extends PacketFormatter {
 
 	@Override

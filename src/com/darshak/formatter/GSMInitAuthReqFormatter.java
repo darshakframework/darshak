@@ -8,6 +8,11 @@ import static com.darshak.util.Utils.formatHexBytes;
 import com.darshak.modal.Packet;
 import com.darshak.modal.PacketAttribute;
 
+/**
+ * 
+ * @author Swapnil Udar & Ravishankar Borgaonkar
+ *
+ */
 public class GSMInitAuthReqFormatter extends PacketFormatter {
 
 	@Override

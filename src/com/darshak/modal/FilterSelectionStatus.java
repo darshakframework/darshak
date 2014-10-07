@@ -2,11 +2,11 @@ package com.darshak.modal;
 
 import android.util.Log;
 
+import com.darshak.constants.Constants;
 import com.darshak.constants.PacketType;
 import com.darshak.db.DatabaseSchema;
 
 /**
- * On Main page filters can be introduced. This class will help to achive that.
  * 
  * @author Swapnil Udar & Ravishankar Borgaonkar
  * 
@@ -23,8 +23,8 @@ public class FilterSelectionStatus {
 			PacketType.SILENT_SMS };	
 
 	private boolean sSilentSMSCellularEvents;
-	// Remove it
-	private boolean sProfileParams = true;
+
+	private boolean sProfileParams = Constants.prodMode ? false : true;
 
 	private static final PacketType[] PROFILE_PARAM_PACKETS = new PacketType[] { PacketType.SYS_INFO_3, };
  

@@ -323,7 +323,7 @@ public class DarshakService extends Service {
 								filteredByteSeq, Constants._3G);
 						// In case of 3G it has been observed that for cellular events
 						// No configured packets matches. then the event is not registered
-						// and not displayed. To ovecome that issue. Create empty packet.
+						// and not displayed. To overcome that issue. Create empty packet.
 						if (_3gEntries == null || _3gEntries.size() == 0) {
 							Packet pkt = new Packet(PacketType.NULL, "");
 							_3gEntries.add(pkt);
@@ -341,12 +341,14 @@ public class DarshakService extends Service {
 						Log.e(LOG_TAG,
 								"Number of GSM entries : " + gsmEntries.size());
 						gsmEntries = null;
+					}					
+					if (!Constants.prodMode) {
+						Utils.mvLogFile(matchingLogFile[i]);
 					}
-					// TODO remove it
-					Utils.mvLogFile(matchingLogFile[i]);
 				} else {
-					// TODO remove it
-					Utils.deleteLogFile(matchingLogFile[i]);
+					if (!Constants.prodMode) {
+						Utils.deleteLogFile(matchingLogFile[i]);
+					}
 				}
 				if (insertEntriesIfNotDuplicate(silentSMSEntries, nwType,
 						nwOperator, Event.INCOMING_SILENT_SMS,
@@ -356,11 +358,10 @@ public class DarshakService extends Service {
 				insertEntriesIfNotDuplicate(profileParams, nwType, nwOperator,
 						Event.PROFILE_PARAMS, System.currentTimeMillis());
 
-				// TODO uncomment it
-				//Utils.deleteLogFile(matchingLogFile[i]);
-				// TODO comment it
-				//Utils.mvLogFile(matchingLogFile[i]);
-				
+				if (Constants.prodMode) {
+					Utils.deleteLogFile(matchingLogFile[i]);
+				}
+
 				endTime = System.currentTimeMillis();
 				Log.e(LOG_TAG, "Time taken to extract code info "
 						+ (endTime - startTime) / 1000 + " Seconds.");
@@ -457,14 +458,16 @@ public class DarshakService extends Service {
 	}
 
 	private void beginProfileParamComparison(List<Packet> packets) {
-		if (packets != null && packets.size() > 0) {
-			List<PacketAttribute> packetAttrs = new ArrayList<PacketAttribute>();
-			for (Packet packet : packets) {
-				packetAttrs.addAll(packet.getPacketAttributes());
+		if (!Constants.prodMode) {
+			if (packets != null && packets.size() > 0) {
+				List<PacketAttribute> packetAttrs = new ArrayList<PacketAttribute>();
+				for (Packet packet : packets) {
+					packetAttrs.addAll(packet.getPacketAttributes());
+				}
+				new ProfileParamsComparisonTask(getApplicationContext())
+						.execute(packetAttrs
+								.toArray(new PacketAttribute[packetAttrs.size()]));
 			}
-			new ProfileParamsComparisonTask(getApplicationContext())
-					.execute(packetAttrs
-							.toArray(new PacketAttribute[packetAttrs.size()]));
 		}
 	}
 

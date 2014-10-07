@@ -13,6 +13,11 @@ import static com.darshak.util.Utils.formatHexBytes;
 import com.darshak.modal.Packet;
 import com.darshak.modal.PacketAttribute;
 
+/**
+ * 
+ * @author Swapnil Udar & Ravishankar Borgaonkar
+ *
+ */
 public class GSMInitCipheringModeFormatter extends PacketFormatter {
 
 	private static final byte ENC_MASK = (byte) 0x01;

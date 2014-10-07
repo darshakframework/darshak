@@ -6,5 +6,11 @@
         android:onClick="openAboutUsPage"
         android:showAsAction="never"
         android:title="@string/title_activity_about_us"/>
+    
+     <item
+        android:id="@+id/testMenu"
+        android:onClick="openTestPage"
+        android:showAsAction="never"
+        android:title="@string/title_activity_test"/>
 
 </menu>

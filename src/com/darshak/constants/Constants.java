@@ -38,4 +38,6 @@ public interface Constants {
 	long UNKNOWN_UID = -1;
 	
 	int NUM_OF_TERMINATING_BYTES = 200;
+	
+	boolean prodMode = false;
 }

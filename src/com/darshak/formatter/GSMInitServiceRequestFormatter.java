@@ -13,6 +13,11 @@ import com.darshak.constants.PacketAttributeType;
 import com.darshak.modal.Packet;
 import com.darshak.modal.PacketAttribute;
 
+/**
+ * 
+ * @author Swapnil Udar & Ravishankar Borgaonkar
+ *
+ */
 public class GSMInitServiceRequestFormatter extends PacketFormatter {
 
 	private static final byte A51_MASK = 0x08;

@@ -17,6 +17,11 @@ import com.darshak.R;
 import com.darshak.db.DarshakDBHelper;
 import com.darshak.modal.PacketAttribute;
 
+/**
+ * 
+ * @author Swapnil Udar & Ravishankar Borgaonkar
+ *
+ */
 public class ProfileParamsComparisonTask extends
 		AsyncTask<PacketAttribute, String, Integer> {
 
