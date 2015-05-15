@@ -26,6 +26,8 @@ firmware from [Samsung](http://www.sammobile.com/firmwares/
 )). 
 However we would recommend to install this stock version - https://owncloud.sec.t-labs.tu-berlin.de/owncloud/public.php?service=files&t=883795a7de19d3e9bf20edd6e8f5988c. 
 Easiest way to flash stock version is to use Odin tool (https://owncloud.sec.t-labs.tu-berlin.de/owncloud/public.php?service=files&t=080c003b906788e1d3691d3c9128b103).
+
+
 ####How to install####
 
 * the Samsung S3 needs to be rooted to run this application. Use [Framroot](http://forum.xda-developers.com/apps/framaroot/root-framaroot-one-click-apk-to-root-t2130276
