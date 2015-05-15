@@ -23,16 +23,16 @@ Samsung Galaxy S3 (GT I9300)
 
 Android 4.1.2  (If you running other version, please install stock
 firmware from [Samsung](http://www.sammobile.com/firmwares/
-))
-
+)). 
+However we would recommend to install this stock version - https://owncloud.sec.t-labs.tu-berlin.de/owncloud/public.php?service=files&t=883795a7de19d3e9bf20edd6e8f5988c. You can download and root the device by flashing 
+CF-Auto-Root - https://owncloud.sec.t-labs.tu-berlin.de/owncloud/public.php?service=files&t=714f3a8030c92f5ab6aa5a4178372360.
 
 ####How to install####
 
 * the Samsung S3 needs to be rooted to run this application. Use [Framroot](http://forum.xda-developers.com/apps/framaroot/root-framaroot-one-click-apk-to-root-t2130276
-)
-application from play store.
+) or you can flash device using Odin tool and .  It will install SuperSu binary too.
 * download [the apk from here] (https://github.com/darshakframework/darshak/blob/master/apk/Darshak.apk
-). Soon it will be available on Play store.
+). Or from Playstore - 
 * install [SuperSU](https://play.google.com/store/apps/details?id=eu.chainfire.supersu&hl=de) and give access permission to the Darshak Application.
 * ppen the application and you are ready to monitor.
 
@@ -54,7 +54,6 @@ Disclaimer: This file does not contain your private information such as IMSI, ph
 
 * http://android-holo-colors.com/
  
-
 * Tobias Engel for his awesome https://github.com/2b-as/xgoldmon
 
 
