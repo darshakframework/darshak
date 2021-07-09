@@ -1,6 +1,6 @@
-####Darshak####
+#### Darshak ####
 
-Darshak is an application serving **two primary usage** -
+Darshak is an application serving ** two primary usage ** -
 
 * detecting any suspicious activity of being tracked via cellular network for example Silent SMS
 * to assess security capabilities of your current cellular provider **in realtime**
@@ -17,7 +17,7 @@ For detail information, read our recent [Blackhat USA 2014 slides](https://www.i
 )
 
 
-####Device and OS version supported####
+#### Device and OS version supported ####
 
 1) Samsung Galaxy S3 (GT I9300)
 
@@ -30,7 +30,7 @@ However we would recommend to install this stock version - https://owncloud.sec.
 Easiest way to flash stock version is to use Odin tool (https://owncloud.sec.t-labs.tu-berlin.de/owncloud/public.php?service=files&t=080c003b906788e1d3691d3c9128b103).
 
 
-####How to install####
+#### How to install ####
 
 * the Samsung S3 needs to be rooted to run this application. Use [Framroot](http://forum.xda-developers.com/apps/framaroot/root-framaroot-one-click-apk-to-root-t2130276
 ) or you can flash device with CF-Auto-Root (https://owncloud.sec.t-labs.tu-berlin.de/owncloud/public.php?service=files&t=714f3a8030c92f5ab6aa5a4178372360) using Odin.
@@ -43,7 +43,7 @@ It will install SuperSu binary too.
 
 * Open the application and you are ready to monitor :).
 
-####Data Upload####
+#### Data Upload ####
 
 Currently Darshak stores essential data about GSM and 3G networks in the local
 database file.  Soon upload functionality will be available to upload database file from the app to central repository.
@@ -52,7 +52,7 @@ To help us improve and add features and build IMSI catcher detector profile, we 
 Off course, we make this data avaialbe online for further research in mobile networks.
 Disclaimer: This file does not contain your private information such as IMSI, phone number, incoming/outgoing call numbers etc.
 
-####Thanks####
+#### Thanks ####
 
 * Andreas Schildbach for his essential code part.
 * https://github.com/Chainfire/libsuperuser/
@@ -64,7 +64,7 @@ Disclaimer: This file does not contain your private information such as IMSI, ph
 * Tobias Engel for his awesome https://github.com/2b-as/xgoldmon
 
 
-####Bugs####
+#### Bugs ####
 
 Please report bugs at darshak@sec.t-labs.tu-berlin.de, thank you.
 The code is released under GPL V3. The code is dirty ;) and under development. Feel free to contribute/fork and any suggestions are most welcome.
